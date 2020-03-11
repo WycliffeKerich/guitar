@@ -20,7 +20,7 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Registration Form</v-toolbar-title>
+                <v-toolbar-title>Login Form</v-toolbar-title>
                 <v-spacer />
               </v-toolbar>
               <v-card-text>
@@ -50,8 +50,8 @@
               <v-card-actions>
                 <v-spacer />
                 <v-btn
-                  @click="register"
-                  color="primary">Register</v-btn>
+                  @click="login"
+                  color="primary">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -64,7 +64,7 @@
 <script>
 import AuthenticationService from '@/services/AuthenticationService'
 export default {
-  name: 'Register',
+  name: 'Login',
   data () {
     return {
       email: '',
@@ -73,9 +73,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
